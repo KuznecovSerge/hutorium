@@ -1,4 +1,4 @@
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
 const path = require("path");
@@ -8,10 +8,14 @@ module.exports = {
     entry: "./static/app.jsx", 
     output: {
 	    filename: "bundle.js",
-        path: path.resolve(__dirname, "public")
+        path: path.resolve(__dirname, "public"),
+        publicPath: '/'
+    },
+    devServer: {
+        contentBase: './public',
     },
     plugins: [
-        new CleanWebpackPlugin(["public"]),
+        new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
         new CopyWebpackPlugin([
             {
                 from: "static",

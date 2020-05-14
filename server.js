@@ -1,10 +1,14 @@
 const express = require('express');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const DBService = require("./DBService.js");
 const passport = require("./passport.js");
 
 const app = express();
+const config = require('./webpack.js');
+const compiler = webpack(config);
 DBService.init();
 
 const jsonParser = bodyParser.json();
@@ -16,7 +20,7 @@ const serveSPA = (req, res) => {
   res.setHeader("Content-Type", contentType);
   
   try {
-    fs.readFile('./public/spa.html', function(error, content) {
+    fs.readFile('./public/index.html', function(error, content) {
           if ( !error ) {
             res.end(content, 'utf-8');
           }
@@ -333,6 +337,13 @@ const serveComments = (req,res) => {
   })
 }
 
+
+
+// Tell express to use the webpack-dev-middleware and use the webpack.config.js
+// configuration file as a base.
+app.use(webpackDevMiddleware(compiler, {
+  publicPath: config.output.publicPath,
+}));
 
 // Подключаем мидлваре для обработки статичных файлов: html, css, jpg...
 const staticMiddleware = express.static("public");
