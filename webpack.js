@@ -5,7 +5,7 @@ const path = require("path");
 
 module.exports = {
     mode: "development",
-    entry: "./static/app.jsx", 
+    entry: ["./static/app.jsx", "webpack-hot-middleware/client"],
     output: {
 	    filename: "bundle.js",
         path: path.resolve(__dirname, "public"),
@@ -13,6 +13,7 @@ module.exports = {
     },
     devServer: {
         contentBase: './public',
+        hot: true,
     },
     plugins: [
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
@@ -24,6 +25,7 @@ module.exports = {
             }
         ]),
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+        new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
     rules: [

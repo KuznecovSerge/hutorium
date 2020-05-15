@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "5c0d06e3bdaf7d3821abda40"
+  },
+  "username": "Ирина Кузнецова",
+  "photoUrl": "https://sun6-2.userapi.com/c854024/v854024277/85ed/Lor06F7mkfE.jpg?ava=1",
+  "photo200Url": "https://sun6-4.userapi.com/c854024/v854024277/85eb/EQeNa-kg2k8.jpg?ava=1",
+  "profileUrl": "http://vk.com/id39402450",
+  "id": 39402450,
+  "access": true,
+  "lastAccessDate": {
+    "$date": "2019-05-18T10:41:29.835Z"
+  },
+  "uKey": 1,
+  "tKey": 1,
+  "lastStatus": "inwork"
+},{
+  "_id": {
+    "$oid": "5c0d5d50ccd75438b6ea5399"
+  },
+  "username": "Сергей Кузнецов",
+  "photoUrl": "https://sun9-33.userapi.com/c845123/v845123202/144383/cDCxC9jygB4.jpg?ava=1",
+  "photo200Url": "https://sun9-4.userapi.com/c845123/v845123202/144381/P9BI3R3gZDI.jpg?ava=1",
+  "profileUrl": "http://vk.com/crazyl",
+  "id": 1278066,
+  "access": false,
+  "lastAccessDate": {
+    "$date": "2020-04-24T12:21:46.067Z"
+  },
+  "lastStatus": "inwork"
+},{
+  "_id": {
+    "$oid": "5ea3248bfab2b9577af3736c"
+  },
+  "username": "Роман Шитов",
+  "photoUrl": "https://sun9-3.userapi.com/c4226/v4226967/27/uOVPxu8MdtE.jpg?ava=1",
+  "photo200Url": "https://sun9-60.userapi.com/c4226/v4226967/24/f6z0AtcpzTM.jpg?ava=1",
+  "profileUrl": "http://vk.com/roman_shitov",
+  "id": 16250967,
+  "lastAccessDate": {
+    "$date": "2020-04-24T17:40:27.856Z"
+  },
+  "access": false,
+  "lastStatus": "inwork"
+}]

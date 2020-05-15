@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root';
 import React from "react";
 import ReactDOM from "react-dom";
 import { Router, Route, Switch, NotFoundRoute } from "react-router-dom";
@@ -37,5 +38,6 @@ class App extends React.Component {
 }
 
 const app = <App />;
+hot(app);
 
 ReactDOM.render(app, document.getElementById("root"));

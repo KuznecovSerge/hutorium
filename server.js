@@ -339,11 +339,11 @@ const serveComments = (req,res) => {
 
 
 
-// Tell express to use the webpack-dev-middleware and use the webpack.config.js
-// configuration file as a base.
+// Горячее обновление кода
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }));
+app.use(require("webpack-hot-middleware")(compiler));
 
 // Подключаем мидлваре для обработки статичных файлов: html, css, jpg...
 const staticMiddleware = express.static("public");
